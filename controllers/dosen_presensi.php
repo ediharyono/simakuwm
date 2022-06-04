@@ -47,19 +47,15 @@ public function presensi()
 
 public function dosen_presensi_hadir_semua()
 	{
-		
-//	$sql = 'UPDATE rtrabm SET abhdrtrabm=1, abskttrabm=0, abijntrabm =0, abalptrabm =0, WHERE 1';
-		
+//	$sql = 'UPDATE rtrabm SET abhdrtrabm=1, abskttrabm=0, abijntrabm =0, abalptrabm =0, WHERE 1';		
 	$data = array(
-        'abhdrtrabm' => 1,
+        'abhdrtrabm' => 0,
         'abskttrabm' => 0,
         'abijntrabm' => 0,
         'abijntrabm' => 0,		
-        'abalptrabm' => 0				
+        'abalptrabm' => 1				
 	);
-
-					$this->db->where('thsmstrabm',$this->session->userdata('thsms'));	
-					
+					$this->db->where('thsmstrabm',$this->session->userdata('thsms'));						
 					$this->db->like('kdpsttrabm',$this->session->userdata('kdpstmsmks'));
 					$this->db->like('kdkmktrabm',$this->session->userdata('kdkmkmsmks'));
 					$this->db->where('kelastrabm',$this->session->userdata('kelasmsmks'));
